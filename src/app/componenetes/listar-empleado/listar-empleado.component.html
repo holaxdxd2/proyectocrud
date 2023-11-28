@@ -1,0 +1,39 @@
+<div class="card">
+    <div class="card-header">
+       
+       
+    </div>
+    <div class="card-body">
+        <h1> Lista Personas </h1>
+        <table class="table ">
+            <thead>
+                <tr>
+                    <th >Id</th>
+                    <th>Descripcion</th>
+                    <th>Fecha</th>
+                    <th>Accion</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let empleado of empleados; let iControl=index">
+                    <td> {{empleado.id}}  </td>
+                    <td> {{empleado.descripcion}}  </td>
+                    <td> {{empleado.fecha}}  </td>
+            
+                    <td> 
+                        <button class="btn btn-warning" (click)="actualizarPagina()">
+                            <i class="fas fa-sync-alt"></i> 
+                        </button>
+                        |
+                        <button class="btn btn-danger" (click)="borrarRegistro(empleado.id)" role="button">
+                            <i class="fas fa-trash-alt"></i> 
+                        </button>
+                    </td>
+                </tr>
+             
+            </tbody>
+        </table>
+        <button class="btn btn-success" routerLink="/agregar-empleado/">New </button>
+       </div>
+</div>
